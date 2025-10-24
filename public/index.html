@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Up Game - ML, PUBG, PB | Toko Game Teo</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header>
+        <img src="images/logo_topup.jpg" alt="Logo Toko Game Teo" class="main-header-center-logo logo_topup">
+
+        <div class="header-center-title"> 
+            
+            <h1>TEO STORE</h1> 
+        </div>
+        <nav>
+            <button id="show-cart-btn">Keranjang (<span id="cart-count">0</span>)</button>
+        </nav>
+    </header>
+
+    <div id="player-input">
+        <h2>Masukkan ID Pemain</h2>
+        <input type="text" id="player-id-ml" data-game="ML" placeholder="ID Pemain Mobile Legends" class="player-id-input">
+        <input type="text" id="player-id-pubgm" data-game="PUBGM" placeholder="ID Pemain PUBG Mobile" class="player-id-input">
+        <input type="text" id="player-id-pb" data-game="PB" placeholder="ID Pemain Point Blank" class="player-id-input">
+        <input type="text" id="player-id-ff" data-game="FF" placeholder="ID Pemain Free Fire" class="player-id-input">
+        <p>Isi ID yang sesuai, lalu pilih paket di bawah ini. Pastikan ID Anda benar!</p>
+    </div>
+
+    <div id="product-title-container">
+        <h2>Pilih Paket Top Up</h2>
+    </div>
+
+    <main id="product-list">
+        </main>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Detail Keranjang Top Up</h2>
+            
+            <div id="cart-items">
+                <p>Keranjang kosong.</p>
+            </div>
+            
+            <div id="cart-summary">
+                <p>Total Item: <span id="summary-count">0</span></p>
+                <p>Total Harga: Rp<span id="cart-total">0</span></p>
+                <button id="checkout-btn">Checkout Sekarang</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script> 
+</body>
+</html>

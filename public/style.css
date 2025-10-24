@@ -1,0 +1,270 @@
+/* public/style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+    /* Gambar Latar Belakang (Pastikan file background.jpg ada di public/images/) */
+    background-image: url("images/background.jpg");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    background-color: #f0f2f5; 
+}
+
+/* KONTEN LAIN DIBERI BACKGROUND SANGAT TRANSPARAN (0.1) */
+#product-title-container, #product-list, .modal-content {
+    background-color: rgba(86, 18, 18, 0.1); 
+    border-radius: 8px; 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(5px);
+}
+
+/* KOTAK INPUT ID PEMAIN: TIDAK TERLALU TRANSPARAN (0.8) */
+#player-input {
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 8px; 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    
+    padding: 20px;
+    text-align: center;
+    color: #333; 
+    margin: 30px auto 20px auto; /* Jarak dari header */
+    max-width: 800px; 
+}
+
+
+/* --- HEADER BARU: Logo, Judul Besar Merah, Keranjang --- */
+header {
+    background-color: #333; 
+    color: white;
+    padding: 1em 20px;
+    
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    min-height: 60px; 
+}
+
+/* public/style.css (Perbaikan untuk semua elemen Logo di Header) */
+
+/* Logo yang berada di paling kiri header */
+.main-header-center-logo{
+    height: 140px !important; /* Ukuran yang lebih kecil */
+    width: auto !important;
+    
+    /* Tambahkan !important jika ukuran sebelumnya gagal berubah */
+    /* height: 35px !important; */
+}
+
+/* Logo yang mungkin Anda tempatkan di tengah header (Jika ada logo tambahan di sana) */
+.main-header-center-logo {
+    height: 50px; /* Ukuran yang ideal */
+    width: auto;
+    object-fit: contain;
+}
+
+/* TENGAH: Judul Toko Game Teo */
+.header-center-title {
+    flex-grow: 1; /* Ambil ruang di tengah */
+    text-align: center;
+}
+.header-center-title h1 {
+    font-family: 'Oswald', sans-serif; 
+    margin: 0;
+    font-size: 4.4em; 
+    color: #0025b9; /* WARNA MERAH! */
+    font-weight: 65px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4); 
+    letter-spacing: 2px;
+}
+
+
+/* Kanan: Tombol Keranjang */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+#show-cart-btn {
+    background-color: #ffc107; 
+    color: #221f1f;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s; 
+}
+#show-cart-btn:hover {
+    background-color: #e0b000;
+}
+
+
+/* Input ID Pemain */
+.player-id-input {
+    padding: 10px;
+    margin: 8px; 
+    border: 1px solid #007bff; 
+    width: 280px; 
+    border-radius: 5px;
+    background-color: white; /* Kotak input dibuat putih solid agar mudah diisi */
+}
+
+/* --- TATA LETAK JUDUL 'PILIH PAKET TOP UP' --- */
+#product-title-container {
+    text-align: center;
+    margin: 40px auto 0 auto; 
+    padding: 20px 20px 5px 20px; 
+    width: 90%; 
+    max-width: 1200px; 
+    border-bottom: 2px solid #000000; 
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#product-title-container h2 {
+    margin: 0;  
+    font-size: 2em;
+    color: #ffffff;
+}
+
+/* --- TATA LETAK KARTU PRODUK (MAIN) --- */
+#product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 20px; 
+    padding: 30px 30px 50px 30px; 
+    
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto 30px auto; 
+    
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 240px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+    background-color: rgba(255, 255, 255, 0.5); 
+}
+.product-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+    /* Gaya Dasar untuk Logo Game di Kartu */
+    width: 100px;
+    height: 100px;
+    object-fit: contain; 
+    margin-bottom: 15px;
+    border: 3px solid #000000;
+    background-color: white;
+}
+
+/* Aturan Khusus: Logo MLBB tidak bulat */
+.product-card:not([data-game="Mobile Legends"]) img {
+    border-radius: 50%; 
+}
+.product-card[data-game="Mobile Legends"] img {
+    border-radius: 0; 
+}
+
+
+.product-card button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.product-card button:hover {
+    background-color: #1e7e34;
+}
+
+/* --- Modal Style --- */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7); 
+}
+
+.modal-content {
+    margin: 5% auto; 
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+}
+
+.close-btn {
+    color: #333; 
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+.close-btn:hover {
+    color: red;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ddd;
+    font-size: 1.1em;
+    align-items: center;
+}
+
+#cart-summary {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #000000;
+    text-align: right;
+}
+
+#checkout-btn {
+    background-color: #007bff; 
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+#checkout-btn:hover {
+    background-color: #0056b3;
+}
